@@ -14,9 +14,14 @@ WORKDIR "/src/."
 RUN dotnet build "TechChallenge.csproj" -c Release -o /app/build
 
 FROM build AS publish
+RUN dotnet tool install -g dotnet-ef
+ENV PATH $PATH:/root/.dotnet/tools
 RUN dotnet publish "TechChallenge.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet ef migrations bundle
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY --from=publish /src/efbundle .
+RUN chmod +x efbundle
 ENTRYPOINT ["dotnet", "TechChallenge.dll"]
