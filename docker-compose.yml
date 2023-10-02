@@ -6,6 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
+      ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__DefaultConnection: "Server=db;Port=3306;Database=TechChallenge;User=TechChallenge;Password=TechChallengeSoat4;"
     ports:
       - 8080:80
