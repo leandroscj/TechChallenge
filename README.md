@@ -7,4 +7,4 @@ Sistema de autoatendimento para fast-foods.
 Dentro da raíz do projeto execute um dos comandos abaixo.
 
 - Máquinas Linux/Mac: `$ ./start-local-linux.sh`
-- Máquinas Windows: `c:\TechChallenge\ start-local-windows.bat`
+- Máquinas Windows: `c:\TechChallenge\ start-local-windows.bat` (via CMD ou PowerShell)
