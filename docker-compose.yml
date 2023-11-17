@@ -17,6 +17,7 @@ services:
       - api3
 
   api1:
+    container_name: api1
     build:
       context: .
       dockerfile: Dockerfile
@@ -32,6 +33,7 @@ services:
       - db
 
   api2:
+    container_name: api2
     build:
       context: .
       dockerfile: Dockerfile
@@ -47,6 +49,7 @@ services:
       - db
 
   api3:
+    container_name: api3
     build:
       context: .
       dockerfile: Dockerfile
