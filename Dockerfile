@@ -14,7 +14,7 @@ WORKDIR "/src/."
 RUN dotnet build "TechChallenge.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet tool install -g dotnet-ef
+RUN dotnet tool install -g dotnet-ef --version 6.0
 ENV PATH $PATH:/root/.dotnet/tools
 RUN dotnet publish "TechChallenge.csproj" -c Release -o /app/publish /p:UseAppHost=false
 RUN dotnet ef migrations bundle
