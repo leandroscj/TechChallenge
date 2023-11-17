@@ -2,6 +2,7 @@ version: "3"
 
 services:
   nginx:
+    container_name: nginx
     image: nginx
     ports:
       - 8080:80
@@ -65,6 +66,7 @@ services:
       - db
 
   db:
+    container_name: db
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
